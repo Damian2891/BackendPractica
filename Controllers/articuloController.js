@@ -41,6 +41,7 @@ export class ArticuloController{
     //Método para crear un nuevo artículo
     create=async(request,response)=>{
         console.log("hola");
+        console.log(request.body);
         const articulo=validarArticulo(request.body);//Valida el cuerpo de la solicitud con zod
        /* if(articulo.error){
             return response.status (400).json('Validación de datos es Incorrecta');
