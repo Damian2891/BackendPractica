@@ -43,9 +43,9 @@ export class ArticuloController{
         console.log("hola");
         console.log(request.body);
         const articulo=validarArticulo(request.body);//Valida el cuerpo de la solicitud con zod
-       /* if(articulo.error){
+        if(articulo.error){
             return response.status (400).json('Validación de datos es Incorrecta');
-        }*/
+        }
        
         const nuevoArticulo=await this.modelo.create(articulo);//Crea un nuevo artículo
         response.json(nuevoArticulo);
